@@ -1,0 +1,74 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"home", 
+		"index.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"sale", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"handbags", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"wallets", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"accessories", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"mens store", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"shoes", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"vintage", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"contact us", 
+		"contact.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"services", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
