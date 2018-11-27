@@ -61,7 +61,8 @@ $APPLICATION->SetTitle("Aditii");
 			0 => "",
 			1 => "",
 		),
-		"PROPERTY_CODE_MOBILE" => "",
+		"PROPERTY_CODE_MOBILE" => array(
+		),
 		"OFFERS_LIMIT" => "6",
 		"VIEW_MODE" => "SECTION",
 		"TEMPLATE_THEME" => "green",
@@ -84,8 +85,8 @@ $APPLICATION->SetTitle("Aditii");
 		"MESS_BTN_ADD_TO_BASKET" => "В корзину",
 		"MESS_BTN_DETAIL" => "Подробнее",
 		"MESS_NOT_AVAILABLE" => "Нет в наличии",
-		"SECTION_URL" => "",
-		"DETAIL_URL" => "",
+		"SECTION_URL" => "#SITE_DIR#/catalog/?SECTION_ID=#SECTION_ID#/",
+		"DETAIL_URL" => "#SITE_DIR#/catalog/?SECTION_ID=#SECTION_ID#&ELEMENT_ID=#ELEMENT_ID#/",
 		"PRODUCT_QUANTITY_VARIABLE" => "quantity",
 		"SEF_MODE" => "N",
 		"CACHE_TYPE" => "A",
@@ -100,7 +101,7 @@ $APPLICATION->SetTitle("Aditii");
 		"SHOW_PRICE_COUNT" => "1",
 		"PRICE_VAT_INCLUDE" => "Y",
 		"CONVERT_CURRENCY" => "N",
-		"BASKET_URL" => "/personal/basket.php",
+		"BASKET_URL" => "/personal/cart/",
 		"USE_PRODUCT_QUANTITY" => "N",
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
 		"PRODUCT_PROPS_VARIABLE" => "prop",
@@ -115,7 +116,8 @@ $APPLICATION->SetTitle("Aditii");
 		"COMPATIBLE_MODE" => "Y",
 		"ROTATE_TIMER" => "30",
 		"SHOW_PAGINATION" => "Y",
-		"LABEL_PROP_MOBILE" => "",
+		"LABEL_PROP_MOBILE" => array(
+		),
 		"LABEL_PROP_POSITION" => "top-left"
 	),
 	false

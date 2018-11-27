@@ -3,59 +3,25 @@
             <div class="bg-body-footer">
                 <div class="wrap">
                     <div class="footer">
-                        <div class="footer-columns-of-4 clearfix">
-                            <div class="footer-column-of-1-4">
-                                <h3>featured sale</h3>
-                                <ul>
-                                    <li><a href="">Alexis Hudson</a></li>
-                                    <li><a href="">American Apparel</a></li>
-                                    <li><a href="">Ben Sherman</a></li>
-                                    <li><a href="">Big Buddha</a></li>
-                                    <li><a href="">Chanel</a></li>
-                                    <li><a href="">Christian Audigier</a></li>
-                                    <li><a href="">Coach</a></li>
-                                    <li><a href="">Cole Haan</a></li>
-                                </ul>
-                            </div>
-                            <div class="footer-column-of-1-4">
-                                <h3>men store</h3>
-                                <ul>
-                                    <li><a href="">Alexis Hudson</a></li>
-                                    <li><a href="">American Apparel</a></li>
-                                    <li><a href="">Ben Sherman</a></li>
-                                    <li><a href="">Big Buddha</a></li>
-                                    <li><a href="">Chanel</a></li>
-                                    <li><a href="">Christian Audigier</a></li>
-                                    <li><a href="">Coach</a></li>
-                                    <li><a href="">Cole Haan</a></li>
-                                </ul>
-                            </div>
-                            <div class="footer-column-of-1-4">
-                                <h3>women store</h3>
-                                <ul>
-                                    <li><a href="">Alexis Hudson</a></li>
-                                    <li><a href="">American Apparel</a></li>
-                                    <li><a href="">Ben Sherman</a></li>
-                                    <li><a href="">Big Buddha</a></li>
-                                    <li><a href="">Chanel</a></li>
-                                    <li><a href="">Christian Audigier</a></li>
-                                    <li><a href="">Coach</a></li>
-                                    <li><a href="">Cole Haan</a></li>
-                                </ul>
-                            </div>
-                            <div class="footer-column-of-1-4">
-                                <h3>quick links</h3>
-                                <ul>
-                                    <li><a href="">Alexis Hudson</a></li>
-                                    <li><a href="">American Apparel</a></li>
-                                    <li><a href="">Ben Sherman</a></li>
-                                    <li><a href="">Big Buddha</a></li>
-                                    <li><a href="">Chanel</a></li>
-                                    <li><a href="">Christian Audigier</a></li>
-                                    <li><a href="">Coach</a></li>
-                                    <li><a href="">Cole Haan</a></li>
-                                </ul>
-                            </div>
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:menu",
+                            "bottom",
+                            array(
+                                "ALLOW_MULTI_SELECT" => "N",
+                                "CHILD_MENU_TYPE" => "left",
+                                "DELAY" => "N",
+                                "MAX_LEVEL" => "1",
+                                "MENU_CACHE_GET_VARS" => array(
+                                ),
+                                "MENU_CACHE_TIME" => "3600",
+                                "MENU_CACHE_TYPE" => "N",
+                                "MENU_CACHE_USE_GROUPS" => "Y",
+                                "ROOT_MENU_TYPE" => "bottom",
+                                "USE_EXT" => "Y",
+                                "COMPONENT_TEMPLATE" => "bottom"
+                            ),
+                            false
+                        );?>
                         </div>
                     </div>
                 </div>
@@ -63,9 +29,19 @@
             <div class="bg-bottom-line-footer">
                 <div class="wrap">
                     <div class="footer">
-                        <div class="copyright">
-                            <p>Copyright &copy; 2013 Css Author</p>
-                        </div>
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            ".default",
+                            array(
+                                "COMPONENT_TEMPLATE" => ".default",
+                                "AREA_FILE_SHOW" => "file",
+                                "AREA_FILE_SUFFIX" => "copyright",
+                                "EDIT_TEMPLATE" => "",
+                                "AREA_FILE_RECURSIVE" => "Y",
+                                "PATH" => "index_copyright.php"
+                            ),
+                            false
+                        );?>
                     </div>
                 </div>
             </div>

@@ -38,7 +38,7 @@
                 <div class="wrap">
                     <div class="header clearfix">
                         <div class="logo">
-                            <a href="<?=SITE_DIR; ?>/index.html">Aditii</a>
+                            <a href="<?=SITE_DIR; ?>index.php">Aditii</a>
                         </div>
                         
                         <?$APPLICATION->IncludeComponent(
@@ -71,15 +71,6 @@
                             ),
                             false
                         );?>
-
-                        <!--
-                        <div class="header-cart">
-                            <img src="<?=SITE_TEMPLATE_PATH; ?>/images/shopping_basket.png" alt="pic_shopping_basket">
-                                    <span>
-                                        <a href="#">$300</a>
-                                    </span>
-                        </div>
-                        -->
 
                         <?$APPLICATION->IncludeComponent(
                             "bitrix:search.form",

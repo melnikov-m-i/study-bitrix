@@ -63,9 +63,9 @@ img {
 
 @font-face {
 	font-family: "Bebas Neue";
-	src: url("../fonts/bebasneue/bebasneueregular.ttf") format("truetype"),
-	url("../fonts/bebasneue/bebasneueregular.woff") format("woff"),
-	url("../fonts/bebasneue/bebasneueregular.woff2") format("woff2");
+	src: url("./fonts/bebasneue/bebasneueregular.ttf") format("truetype"),
+	url("./fonts/bebasneue/bebasneueregular.woff") format("woff"),
+	url("./fonts/bebasneue/bebasneueregular.woff2") format("woff2");
 	font-style: normal;
 	font-weight: normal;
 }
@@ -693,7 +693,12 @@ body {
 	float: left;
 }
 
-.btn-form-add-cart form input[type="submit"]{
+.btn-form-add-cart a {
+	text-decoration: none;
+}
+
+.btn-form-add-cart form input[type="submit"],
+.btn-form-add-cart a {
 	font-family: "Open Sans", sans-serif;
 	cursor: pointer;
 	border: none;
@@ -705,7 +710,8 @@ body {
 	text-transform: uppercase;
 }
 
-.btn-form-add-cart form input[type="submit"]:hover {
+.btn-form-add-cart form input[type="submit"]:hover,
+.btn-form-add-cart a:hover {
 	background: #3CC395;
 }
 
