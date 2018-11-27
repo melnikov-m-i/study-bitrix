@@ -1,0 +1,73 @@
+div.vacancy-list
+{
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	flex-wrap: wrap;
+	align-content: center;
+	word-wrap: break-word;
+}
+
+.vacancy-item {
+	border: 1px solid #DFDFDF;
+	width: 40%;
+	margin: 1%;
+	padding: 1%;
+}
+
+.preview-picture {
+	text-align: center;
+	margin: 0 auto;
+	width: 70%;
+}
+
+.preview-picture img {
+	max-width: 100%;
+	width: 100%;
+}
+
+.vacancy-content {
+	width: 90%;
+	margin: 2% auto 1%;
+}
+
+.vacancy-content a {
+	display: block;
+	text-decoration: none;
+}
+
+.vacancy-content h3 {
+	font: 24px "Bebas Neue", sans-serif;
+	font-weight: bold;
+	line-height: 18px;
+	color: #adadad;
+	text-align: center;
+}
+
+.vac-footer {
+	margin-top: 2%;
+}
+
+.vacancy-date-time {
+	display: inline-block;
+	color: #0a962f;
+	float: left;
+	padding: 8px 10px;
+}
+
+.vacancy-more {
+	display: inline-block;
+	font-size: 16px;
+	line-height: 20px;
+	background: #3CC395;
+	color: #ffffff;
+	padding: 8px 10px;
+	margin-left: 10px;
+	text-transform: uppercase;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	width: 120px;
+	float: right;
+}
+
