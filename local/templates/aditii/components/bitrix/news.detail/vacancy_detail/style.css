@@ -1,13 +1,57 @@
-div.news-detail
+.vacancy-detail
 {
 	word-wrap: break-word;
 }
-div.news-detail img.detail_picture
-{
-	float:left;
-	margin:0 8px 6px 1px;
+
+.det-vacancy-header {
+	margin: 1% 4%;
 }
-.news-date-time
-{
-	color:#486DAA;
+
+.det-vacancy-header h3 {
+	font: 24px "Bebas Neue", sans-serif;
+	font-weight: bold;
+	color: #adadad;
+	text-align: left;
+}
+
+.det-vacancy-body {
+	padding: 1%;
+	margin: 0 1%;
+}
+
+.det-vacancy-body h4 {
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.det-vacancy-body ul {
+	list-style: circle;
+}
+
+.det-vacancy-body ul li {
+	margin: 10px 0;
+}
+
+.det-vacancy-footer {
+	padding: 1%;
+	color: grey;
+}
+
+.vacancy-detail-picture {
+	width: 70%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.vacancy-date-time {
+	display: inline-block;
+	color: #0a962f;
+	float: left;
+	padding: 3px 10px;
+	margin-right: 1%;
+	font-size: 18px;
+}
+
+.vacancy-detail-share {
+	margin-top: 1%;
 }

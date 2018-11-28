@@ -21,12 +21,9 @@ $APPLICATION->SetTitle("Описание вакансии");
 		"ELEMENT_CODE" => "",
 		"CHECK_DATES" => "Y",
 		"FIELD_CODE" => array(
-			0 => "NAME",
-			1 => "DETAIL_TEXT",
-			2 => "DETAIL_PICTURE",
-			3 => "DATE_ACTIVE_FROM",
-			4 => "DATE_ACTIVE_TO",
-			5 => "",
+			0 => "DATE_ACTIVE_FROM",
+			1 => "DATE_ACTIVE_TO",
+			2 => "",
 		),
 		"PROPERTY_CODE" => array(
 			0 => "POST",
@@ -73,7 +70,19 @@ $APPLICATION->SetTitle("Описание вакансии");
 		"MESSAGE_404" => "",
 		"TEMPLATE_THEME" => "blue",
 		"MEDIA_PROPERTY" => "",
-		"SLIDER_PROPERTY" => ""
+		"SLIDER_PROPERTY" => "",
+		"SHARE_HIDE" => "N",
+		"SHARE_TEMPLATE" => "",
+		"SHARE_HANDLERS" => array(
+			0 => "delicious",
+			1 => "facebook",
+			2 => "lj",
+			3 => "mailru",
+			4 => "twitter",
+			5 => "vk",
+		),
+		"SHARE_SHORTEN_URL_LOGIN" => "",
+		"SHARE_SHORTEN_URL_KEY" => ""
 	),
 	false
 );?>

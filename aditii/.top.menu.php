@@ -64,8 +64,8 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"services", 
-		"", 
+		"vacancy",
+		"vacancy/index.php",
 		Array(), 
 		Array(), 
 		"" 
