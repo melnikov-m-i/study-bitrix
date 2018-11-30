@@ -1,25 +1,18 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-use \Bitrix\Main\Loader;
-use \Bitrix\Iblock\IblockTable;
-
-if(!Loader::includeModule('iblock')) {
+if(!CModule::IncludeModule("iblock")) {
     return;
 }
 
-/*$dbIblock = IblockTable::getList(array(
-    'select' => array('*'),
-    'filter' => array('SITE_ID' => SITE_ID)
-));*/
-
 $iBlocks = [];
+$arFilter = Array();
+$arFilter['SITE_ID'] = SITE_ID;
 
-$dbIblock = CIBlock::GetList(
-    Array(),
-    Array(
-        'SITE_ID' => SITE_ID
-    ), true
-);
+if ($arParams['IBLOCK_TYPE_ID'] !== IMPORT_INFOBLOCK_DEFAULT_TYPE_ALL) {
+    $arFilter['IBLOCK_TYPE_ID'] = $arParams['IBLOCK_TYPE_ID'];
+}
+
+$dbIblock = CIBlock::GetList(Array(), $arFilter, true);
 
 while($res = $dbIblock->Fetch())
 {

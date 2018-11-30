@@ -12,11 +12,14 @@ $APPLICATION->SetTitle("Импорт данных");
             <div class="main">
 
                 <?$APPLICATION->IncludeComponent(
-                    "demo:import.data.xml",
-                    "",
-                    Array(),
-                    false
-                );?>
+	"demo:import.data.xml", 
+	".default", 
+	array(
+		"COMPONENT_TEMPLATE" => ".default",
+		"IBLOCK_TYPE_ID" => "allTypes"
+	),
+	false
+);?>
                 
             </div>
         </div>

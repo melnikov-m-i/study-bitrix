@@ -50,8 +50,8 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"vintage", 
-		"", 
+		"import",
+		"data-import.php",
 		Array(), 
 		Array(), 
 		"" 
