@@ -1,8 +1,8 @@
 <?
 $sSectionName = "Заказы";
 $arDirProperties = Array(
-   "description" => "Заказы",
-   "keywords" => "заказы",
-   "title" => "Заказы"
+    "description" => "Заказы",
+    "keywords" => "заказы",
+    "title" => "Заказы"
 );
 ?>

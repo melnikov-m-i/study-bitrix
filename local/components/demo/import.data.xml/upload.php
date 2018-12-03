@@ -1,8 +1,8 @@
 <?
 require_once($_SERVER['DOCUMENT_ROOT'] . "/bitrix/modules/main/include/prolog_before.php");
-header ("Content-Type: application/json");
+header("Content-Type: application/json");
 
-require_once($_SERVER['DOCUMENT_ROOT'] ."/local/components/demo/import.data.xml/lib/import.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/local/components/demo/import.data.xml/lib/import.php");
 
 try {
     switch ($_FILES['fileXml']['error']) {
@@ -26,16 +26,17 @@ try {
             $finfo->file($_FILES['fileXml']['tmp_name']),
             array('text/xml', 'application/xml'),
             true
-        )) {
+        )
+    ) {
         throw new RuntimeException('Неправильный формат файла');
     }
 
-    $uploadsDir = $_SERVER['DOCUMENT_ROOT'].'/upload/xml/';
+    $uploadsDir = $_SERVER['DOCUMENT_ROOT'] . '/upload/xml/';
     $fileName = $_FILES['fileXml']['name'];
     $isMoved = move_uploaded_file($_FILES['fileXml']['tmp_name'], $uploadsDir . $fileName);
 
-    if($isMoved) {
-        if(empty($_POST["iblockID"])) {
+    if ($isMoved) {
+        if (empty($_POST["iblockID"])) {
             throw new RuntimeException('Не передан ID инфоблока');
         } else {
             $IBLOCK_ID = $_POST['iblockID'];
@@ -43,11 +44,10 @@ try {
 
         clearSelectedIBlock($IBLOCK_ID);
         importXml($IBLOCK_ID, $uploadsDir . $fileName);
-        unlink ($uploadsDir . $fileName);
+        unlink($uploadsDir . $fileName);
     } else {
         throw new RuntimeException('Не удалось переместить загруженный файл.');
     }
-
 } catch (RuntimeException $e) {
     sendMessageToJson(STATUS_MESSAGE_JSON["ERROR"], $e->getMessage());
 }

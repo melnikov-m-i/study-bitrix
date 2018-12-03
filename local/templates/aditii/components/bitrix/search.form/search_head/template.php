@@ -1,4 +1,4 @@
-<? if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -10,10 +10,10 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
-$this->setFrameMode(true);?>
+$this->setFrameMode(true); ?>
 <div class="header-search">
-<form action="<?=$arResult["FORM_ACTION"]?>">
-	<input type="text" name="q" value="" size="15" maxlength="50" />
-	<button type="submit"><i class="fa fa-search"></i></button>
-</form>
+    <form action="<?= $arResult["FORM_ACTION"] ?>">
+        <input type="text" name="q" value="" size="15" maxlength="50"/>
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
 </div>

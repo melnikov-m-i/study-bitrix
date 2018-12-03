@@ -1,18 +1,16 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Контакты");
 $APPLICATION->SetPageProperty("keywords", "контакт, информация");
 $APPLICATION->SetPageProperty("description", "Контактная информация для связи с нами");
 $APPLICATION->SetTitle("Контакты");
 ?>
-
     <section class="wrap">
         <div class="contact clearfix">
             <div class="contact_info">
                 <h2>Адрес</h2>
                 <div class="map">
-
-                    <?$APPLICATION->IncludeComponent(
+                    <? $APPLICATION->IncludeComponent(
                         "bitrix:map.yandex.view",
                         ".default",
                         array(
@@ -33,53 +31,51 @@ $APPLICATION->SetTitle("Контакты");
                             )
                         ),
                         false
-                    );?>
-
+                    ); ?>
                 </div>
             </div>
             <div class="contact-form">
                 <h2>Связаться с нами</h2>
                 <form method="post" action="">
                     <div>
-                            <span>
-                                <label>Имя</label>
-                            </span>
-                            <span>
-                                <input name="userName" type="text">
-                            </span>
+                        <span>
+                            <label>Имя</label>
+                        </span>
+                        <span>
+                            <input name="userName" type="text">
+                        </span>
                     </div>
                     <div>
-                            <span>
-                                <label>E-mail</label>
-                            </span>
-                            <span>
-                                <input name="userEmail" type="text">
-                            </span>
+                        <span>
+                            <label>E-mail</label>
+                        </span>
+                        <span>
+                            <input name="userEmail" type="text">
+                        </span>
                     </div>
                     <div>
-                            <span>
-                                <label>Телефон</label>
-                            </span>
-                            <span>
-                                <input name="userPhone" type="text">
-                            </span>
+                        <span>
+                            <label>Телефон</label>
+                        </span>
+                        <span>
+                            <input name="userPhone" type="text">
+                        </span>
                     </div>
                     <div>
-                            <span>
-                                <label>Сообщение</label>
-                            </span>
-                            <span>
-                                <textarea name="userMsg"></textarea>
-                            </span>
+                        <span>
+                            <label>Сообщение</label>
+                        </span>
+                        <span>
+                            <textarea name="userMsg"></textarea>
+                        </span>
                     </div>
                     <div>
-                            <span>
-                                <input type="submit" class="" value="Отправить">
-                            </span>
+                        <span>
+                            <input type="submit" class="" value="Отправить">
+                        </span>
                     </div>
                 </form>
             </div>
         </div>
     </section>
-
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

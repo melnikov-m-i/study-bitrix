@@ -2,10 +2,10 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/bitrix/modules/main/include/prolog_before.php");
 
 CModule::IncludeModule('iblock');
-
 define("STATUS_MESSAGE_JSON", array("SUCCESS" => "success", "ERROR" => "error"));
 
-function clearSelectedIBlock($IBLOCK_ID) {
+function clearSelectedIBlock($IBLOCK_ID)
+{
     $arFilter = array("IBLOCK_ID" => $IBLOCK_ID, "SECTION_ID" => false);
     $rsSections = CIBlockSection::GetList(array(), $arFilter, false, array('ID'), false);
     $arErrorsDeleting = array();
@@ -33,11 +33,12 @@ function clearSelectedIBlock($IBLOCK_ID) {
     }
 }
 
-function importXml($IBLOCK_ID, $tempFile) {
+function importXml($IBLOCK_ID, $tempFile)
+{
     $xmlFile = $tempFile;
     $xmlStr = file_get_contents($xmlFile);
 
-    if($xmlStr === false) {
+    if ($xmlStr === false) {
         sendMessageToJson(STATUS_MESSAGE_JSON["ERROR"], "Произошла ошибка при открытии xml файла");
     }
 
@@ -46,7 +47,7 @@ function importXml($IBLOCK_ID, $tempFile) {
 
     if (!$root) {
         $arXmlErrors = array();
-        foreach(libxml_get_errors() as $error) {
+        foreach (libxml_get_errors() as $error) {
             $arXmlErrors[] = (string)$error->message;
         }
 
@@ -108,11 +109,13 @@ function importXml($IBLOCK_ID, $tempFile) {
     sendMessageToJson(STATUS_MESSAGE_JSON["SUCCESS"], $message);
 }
 
-function sendMessageToJson($status, $message) {
+function sendMessageToJson($status, $message)
+{
     echo json_encode(["status" => $status, "message" => $message]);
     die();
 }
 
-function convertsField($field) {
+function convertsField($field)
+{
     return htmlentities(stripslashes(trim((string)$field)));
 }

@@ -1,6 +1,6 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-if(!CModule::IncludeModule("iblock")) {
+if (!CModule::IncludeModule("iblock")) {
     return;
 }
 
@@ -14,14 +14,11 @@ if ($arParams['IBLOCK_TYPE_ID'] !== IMPORT_INFOBLOCK_DEFAULT_TYPE_ALL) {
 
 $dbIblock = CIBlock::GetList(Array(), $arFilter, true);
 
-while($res = $dbIblock->Fetch())
-{
+while ($res = $dbIblock->Fetch()) {
     $iBlocks[] = $res;
 }
 
 $arResult['IBLOCKS'] = $iBlocks;
-
 $this->IncludeComponentTemplate();
-
 return $arResult;
 ?>

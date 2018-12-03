@@ -1,32 +1,28 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Title");
 ?>
-
-<section>
-    <div class="bg-main">
-        <div class="wrap">
-            <div class="main">
-
-            <?$APPLICATION->IncludeComponent("bitrix:sale.order.ajax", ".default", array(
-                "PAY_FROM_ACCOUNT" => "Y",
-                "COUNT_DELIVERY_TAX" => "Y",
-                "COUNT_DISCOUNT_4_ALL_QUANTITY" => "N",
-                "ONLY_FULL_PAY_FROM_ACCOUNT" => "N",
-                "ALLOW_AUTO_REGISTER" => "N",
-                "SEND_NEW_USER_NOTIFY" => "Y",
-                "PATH_TO_BASKET" => "/personal/cart/",
-                "PATH_TO_PERSONAL" => "/personal/order/",
-                "PATH_TO_PAYMENT" => "/personal/order/payment/",
-                "SET_TITLE" => "Y",
-                "DELIVERY_NO_SESSION" => "Y"
-            ),
-                false
-            );?>
-                
+    <section>
+        <div class="bg-main">
+            <div class="wrap">
+                <div class="main">
+                    <? $APPLICATION->IncludeComponent("bitrix:sale.order.ajax", ".default", array(
+                        "PAY_FROM_ACCOUNT" => "Y",
+                        "COUNT_DELIVERY_TAX" => "Y",
+                        "COUNT_DISCOUNT_4_ALL_QUANTITY" => "N",
+                        "ONLY_FULL_PAY_FROM_ACCOUNT" => "N",
+                        "ALLOW_AUTO_REGISTER" => "N",
+                        "SEND_NEW_USER_NOTIFY" => "Y",
+                        "PATH_TO_BASKET" => "/personal/cart/",
+                        "PATH_TO_PERSONAL" => "/personal/order/",
+                        "PATH_TO_PAYMENT" => "/personal/order/payment/",
+                        "SET_TITLE" => "Y",
+                        "DELIVERY_NO_SESSION" => "Y"
+                    ),
+                        false
+                    ); ?>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+    </section>
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

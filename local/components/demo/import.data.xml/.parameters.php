@@ -1,20 +1,16 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 CModule::IncludeModule("iblock");
-
 $dbIBlockType = CIBlockType::GetList(
     array("sort" => "asc"),
     array("ACTIVE" => "Y")
 );
-
 define("IMPORT_INFOBLOCK_DEFAULT_TYPE_ALL", "allTypes");
-
 $arIblockType[IMPORT_INFOBLOCK_DEFAULT_TYPE_ALL] = GetMessage("IMPORT_INFOBLOCK_DEFAULT_TYPE_ALL");
 
-while ($arIBlockType = $dbIBlockType->Fetch())
-{
+while ($arIBlockType = $dbIBlockType->Fetch()) {
     if ($arIBlockTypeLang = CIBlockType::GetByIDLang($arIBlockType["ID"], LANGUAGE_ID)) {
-        $arIblockType[$arIBlockType["ID"]] = "[".$arIBlockType["ID"]."] ".$arIBlockTypeLang["NAME"];
+        $arIblockType[$arIBlockType["ID"]] = "[" . $arIBlockType["ID"] . "] " . $arIBlockTypeLang["NAME"];
     }
 }
 

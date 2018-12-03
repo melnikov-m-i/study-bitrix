@@ -1,6 +1,6 @@
 /* Для работы должны быть подключены slick и fancybox*/
 
-$(document).ready(function(){
+$(document).ready(function () {
     $('.det-photo-main-slider').slick({
         infinite: false,
         slidesToShow: 1,

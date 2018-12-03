@@ -5,7 +5,7 @@
         <form method="post" name="importDataForm">
             <select name="iblockID">
                 <? foreach ($arResult['IBLOCKS'] as $iBlock): ?>
-                <option value="<?= $iBlock['ID']; ?>"><?= $iBlock['NAME']; ?></option>
+                    <option value="<?= $iBlock['ID']; ?>"><?= $iBlock['NAME']; ?></option>
                 <? endforeach; ?>
             </select>
             <div class="file-upload">
@@ -20,7 +20,7 @@
 </div>
 
 <script>
-    (function() {
+    (function () {
             var inputXmlUpload = document.querySelector('#xmlUpload');
             var inputFileName = document.querySelector('.js-file-name');
             var btnSubmit = document.querySelector('.js-btn-submit')
@@ -60,24 +60,17 @@
             ]
 
             function validFileType(file) {
-                for (var i = 0; i < fileTypes.length; i++) {
-                    if (file.type === fileTypes[i]) {
-                        return true;
-                    }
-                }
-
-                return false;
+                return fileTypes.indexOf(file.type) !== -1;
             }
 
-            document.querySelector('form[name="importDataForm"]').addEventListener('submit', function(event) {
+            document.querySelector('form[name="importDataForm"]').addEventListener('submit', function (event) {
                 event.preventDefault();
 
                 fetch('<?=$_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER["SERVER_NAME"] . $componentPath?>/upload.php', {
                     body: new FormData(this),
                     method: "POST"
-                }).then(function(response) {
+                }).then(function (response) {
                         var contentType = response.headers.get("content-type");
-                    console.log(contentType);
 
                         if (contentType && contentType.includes("application/json")) {
                             return response.json();
@@ -85,17 +78,14 @@
 
                         throw new TypeError("Данные получены не формате JSON");
                     })
-                    .then(function(data) {
-                        console.log(data);
+                    .then(function (data) {
                         areaMessage.innerHTML = '<p>' + data['message'] + '</p>';
                     })
-                    .catch(function(error) {
-                        console.log(error);
+                    .catch(function (error) {
                         areaMessage.innerHTML = '<p>' + error + '</p>';
                     });
             });
-        }
-    )();
+        })();
 </script>
 
 

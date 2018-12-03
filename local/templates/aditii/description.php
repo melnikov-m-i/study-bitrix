@@ -1,8 +1,8 @@
 <?
-$arTemplate = array (
-  'NAME' => 'aditii',
-  'DESCRIPTION' => 'шаблон для тестового сайта Aditii',
-  'SORT' => '',
-  'TYPE' => '',
+$arTemplate = array(
+    'NAME' => 'aditii',
+    'DESCRIPTION' => 'шаблон для тестового сайта Aditii',
+    'SORT' => '',
+    'TYPE' => '',
 );
 ?>

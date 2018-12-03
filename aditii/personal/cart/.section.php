@@ -1,8 +1,8 @@
 <?
 $sSectionName = "Корзина";
 $arDirProperties = Array(
-   "description" => "Корзина",
-   "keywords" => "корзина",
-   "title" => "Корзина"
+    "description" => "Корзина",
+    "keywords" => "корзина",
+    "title" => "Корзина"
 );
 ?>

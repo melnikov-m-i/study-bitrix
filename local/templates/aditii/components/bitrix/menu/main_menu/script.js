@@ -1,15 +1,15 @@
 /* Для работы должен быть подключен JQuery*/
 
-$(function() {
+$(function () {
     var pull = $('#pull'),
-    menu = $('.js-main-menu');
+        menu = $('.js-main-menu');
 
-    pull.on('click', function(e) {
+    pull.on('click', function (e) {
         e.preventDefault();
         menu.slideToggle();
     });
 
-    $(window).resize(function(){
+    $(window).resize(function () {
         var w = $(window).width();
 
         const ADAPTIVE_MOBILE_MAX = 320;
