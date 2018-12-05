@@ -14,13 +14,13 @@ use \Mxm\Spgl\Traits\MethodsCreatingAndDeletingTablesInDBTrait;
 
 Loc::loadMessages(__FILE__);
 
-class CatalogGoodsTable extends DataManager
+class CatalogLocationsTable extends DataManager
 {
     use MethodsCreatingAndDeletingTablesInDBTrait;
 
     public static function getTableName()
     {
-        return 'spgl_catalog_goods';
+        return 'spgl_catalog_locations';
     }
 
     public static function getMap()
@@ -32,7 +32,9 @@ class CatalogGoodsTable extends DataManager
             (new Fields\StringField('EXTERNAL_ID'))
                 ->configureRequired(true),
             new Fields\StringField('NAME'),
-            (new OneToMany('QUANTITY_GOODS_LOCATION', QuantityGoodsLocationTable::class, 'GOODS'))
+            new Fields\StringField('LATITUDE'),
+            new Fields\StringField('LONGITUDE'),
+            (new OneToMany('LOCATION_QUANTITY_GOODS', QuantityGoodsLocationTable::class, 'LOCATION'))
         );
     }
 }

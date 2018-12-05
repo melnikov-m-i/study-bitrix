@@ -5,14 +5,20 @@
 
 namespace Mxm\Spgl;
 
-use Bitrix\Main\Entity;
 use Bitrix\Main\Localization\Loc;
 use Bitrix\Main\Application;
+use Bitrix\Main\ORM\Data\DataManager;
+use Bitrix\Main\ORM\Fields;
+use Bitrix\Main\ORM\Fields\Relations\Reference;
+use Bitrix\Main\ORM\Query\Join;
+use \Mxm\Spgl\Traits\MethodsCreatingAndDeletingTablesInDBTrait;
 
 Loc::loadMessages(__FILE__);
 
-class QuantityGoodsLocationTable extends Entity\DataManager
+class QuantityGoodsLocationTable extends DataManager
 {
+    use MethodsCreatingAndDeletingTablesInDBTrait;
+
     public static function getTableName()
     {
         return 'spgl_quantity_goods_location';
@@ -21,42 +27,16 @@ class QuantityGoodsLocationTable extends Entity\DataManager
     public static function getMap()
     {
         return array(
-            new Entity\StringField('EXTERNAL_ID_LOCATION', array(
-                'primary' => true
-            )),
-            new Entity\StringField('EXTERNAL_ID_GOODS', array(
-                'required' => true
-            )),
-            new Entity\IntegerField('OLD_QUANTITY'),
-            new Entity\IntegerField('NEW_QUANTITY'),
-            new Entity\ReferenceField(
-                'LOCATION',
-                CatalogLocationTable::class,
-                array('=this.EXTERNAL_ID_LOCATION' => 'ref.EXTERNAL_ID')
-            ),
-            new Entity\ReferenceField(
-                'GOODS',
-                CatalogGoodsTable::class,
-                array('=this.EXTERNAL_ID_GOODS' => 'ref.EXTERNAL_ID')
-            )
+            (new Fields\IntegerField('LOCATION_ID'))
+                ->configurePrimary(true),
+            (new Fields\IntegerField('GOODS_ID'))
+                ->configurePrimary(true),
+            new Fields\IntegerField('OLD_QUANTITY'),
+            new Fields\IntegerField('NEW_QUANTITY'),
+            (new Reference('LOCATION', CatalogLocationsTable::class, Join::on('this.LOCATION_ID', 'ref.ID')))
+                ->configureJoinType('inner'),
+            (new Reference('GOODS', CatalogGoodsTable::class, Join::on('this.GOODS_ID', 'ref.ID')))
+                ->configureJoinType('inner')
         );
-    }
-
-    public static function createTable()
-    {
-        $connection = Application::getInstance()->getConnection();
-        if (!$connection->isTableExists(static::getTableName())) {
-            static::getEntity()->createDbTable();
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public static function dropTable()
-    {
-        $connection = Application::getInstance()->getConnection();
-        $connection->dropTable(static::getTableName());
-        return true;
     }
 }
