@@ -1,0 +1,11 @@
+.goods-increased {
+    color: green;
+}
+
+.goods-decreased {
+    color: red;
+}
+
+.goods-unchanged {
+    color: grey;
+}
