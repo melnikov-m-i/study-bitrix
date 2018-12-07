@@ -18,7 +18,7 @@ abstract class DataService
      */
     public function __construct($service)
     {
-        if(!empty($service)) {
+        if(empty($service)) {
             throw new SystemException("Parameter service required");
         }
 

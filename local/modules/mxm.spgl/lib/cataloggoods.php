@@ -10,7 +10,7 @@ use Bitrix\Main\Application;
 use Bitrix\Main\ORM\Data\DataManager;
 use Bitrix\Main\ORM\Fields;
 use Bitrix\Main\ORM\Fields\Relations\OneToMany;
-use \Mxm\Spgl\Traits\MethodsCreatingAndDeletingTablesInDBTrait;
+use Mxm\Spgl\Traits\MethodsCreatingAndDeletingTablesInDBTrait;
 
 Loc::loadMessages(__FILE__);
 

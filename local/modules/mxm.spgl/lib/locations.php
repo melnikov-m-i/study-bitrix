@@ -15,7 +15,7 @@ class Locations extends DataService
     public function writeDataLocationsInDB()
     {
         $data = $this->getDataFromExternalService();
-        $catalogLocations = json_decode($data);
+        $catalogLocations = json_decode($data, true);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new SystemException("The data is not in the correct format");

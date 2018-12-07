@@ -5,6 +5,8 @@
 
 namespace Mxm\Spgl\Traits;
 
+//use Bitrix\Main\Application;
+
 trait MethodsCreatingAndDeletingTablesInDBTrait
 {
     public static function createTable()

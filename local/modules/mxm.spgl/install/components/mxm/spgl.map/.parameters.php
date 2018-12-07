@@ -6,7 +6,7 @@ $arComponentParameters = array(
             "PARENT" => "VISUAL",
             "NAME" => GetMessage("MXM_SPGL_MAP_WIDTH"),
             "TYPE" => "STRING",
-            "DEFAULT" => "300"
+            "DEFAULT" => "600"
         ),
         "HEIGHT_MAP" => array(
             "PARENT" => "VISUAL",

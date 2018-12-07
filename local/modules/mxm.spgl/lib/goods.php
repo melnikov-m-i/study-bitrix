@@ -15,7 +15,7 @@ class Goods extends DataService
     public function writeDataGoodsInDB()
     {
         $data = $this->getDataFromExternalService();
-        $catalogGoods = json_decode($data);
+        $catalogGoods = json_decode($data, true);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new SystemException('The data is not in the correct format');

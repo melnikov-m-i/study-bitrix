@@ -1,10 +1,11 @@
 <?php
-
 use Mxm\Spgl\QuantityGoodsLocationTable;
+
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 class SpglMap extends CBitrixComponent
 {
-    const DEFAULT_WIDTH = 300;
+    const DEFAULT_WIDTH = 600;
     const DEFAULT_HEIGHT = 200;
 
     public function onPrepareComponentParams($arParams)

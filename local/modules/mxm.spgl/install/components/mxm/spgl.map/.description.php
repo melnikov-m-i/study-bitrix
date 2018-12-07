@@ -2,7 +2,7 @@
 
 $arComponentDescription = array(
     "NAME" => GetMessage("MXM_SPGL_MAP_NAME"),
-    "DESCRIPTION" => GetMessage("MXM_DESC"),
+    "DESCRIPTION" => GetMessage("MXM_SPGL_MAP_DESC"),
     "PATH" => array(
         "ID" => "mxm",
         "NAME" => GetMessage("MXM_NAME"),

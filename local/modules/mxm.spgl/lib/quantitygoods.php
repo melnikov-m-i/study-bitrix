@@ -11,12 +11,12 @@ use Mxm\Spgl\QuantityGoodsLocationTable;
 use Mxm\Spgl\CatalogLocationsTable;
 use Mxm\Spgl\CatalogGoodsTable;
 
-class Goods extends DataService
+class QuantityGoods extends DataService
 {
     public function writeDataQuantityGoodsInDB($externalIdLocation)
     {
         $data = $this->getDataFromExternalService();
-        $quantityGoods = json_decode($data);
+        $quantityGoods = json_decode($data, true);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new SystemException('The data is not in the correct format');
@@ -24,7 +24,7 @@ class Goods extends DataService
             $row = CatalogLocationsTable::getRow([
                 "select" => ["ID"],
                 "filter" => ["=EXTERNAL_ID" => $externalIdLocation]
-            ])->fetch();
+            ]);
 
             if (array_key_exists("ID", $row)) {
                 $interiorIdLocation = $row["ID"];
@@ -32,6 +32,7 @@ class Goods extends DataService
                     "select" => ["*", 'EXTERNAL_ID' => "GOODS.EXTERNAL_ID"],
                     "filter" => ["=LOCATION_ID" => $interiorIdLocation]
                 ])->fetchAll();
+
                 $oldExternalIdGoodsInQuantity = array_column($oldQuantityGoods, "EXTERNAL_ID", "GOODS_ID");
                 $newExternalIdGoodsInQuantity = array_keys($quantityGoods);
                 $delIdGoodsInQuantity = array_diff($oldExternalIdGoodsInQuantity, $newExternalIdGoodsInQuantity);
@@ -42,7 +43,7 @@ class Goods extends DataService
                     $goods = CatalogGoodsTable::getList([
                         "filter" => ["=EXTERNAL_ID" => $newIdGoodsInQuantity]
                     ])->fetchAll();
-                    $interiorIdGoods = array_column($goods, "GOODS_ID", "EXTERNAL_ID");
+                    $interiorIdGoods = array_column($goods, "ID", "EXTERNAL_ID");
                 }
 
                 if (!empty($oldIdGoodsInQuantity)) {
@@ -58,7 +59,7 @@ class Goods extends DataService
                                 "OLD_QUANTITY" => $quantity,
                                 "NEW_QUANTITY" => $quantity
                             ];
-                            $result = CatalogGoodsTable::add($fields);
+                            $result = QuantityGoodsLocationTable::add($fields);
 
                             if (!$result->isSuccess()) {
                                 throw new SystemException(implode(",", $result->getErrorMessages()));

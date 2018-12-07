@@ -24,8 +24,7 @@ try {
     $finfo = new finfo(FILEINFO_MIME_TYPE);
     if (false === $ext = array_key_exists(
             $finfo->file($_FILES['fileXml']['tmp_name']),
-            array('text/xml', 'application/xml'),
-            true
+            array('text/xml', 'application/xml')
         )
     ) {
         throw new RuntimeException('Неправильный формат файла');
