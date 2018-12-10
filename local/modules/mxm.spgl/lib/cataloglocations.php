@@ -10,17 +10,15 @@ use Bitrix\Main\Application;
 use Bitrix\Main\ORM\Data\DataManager;
 use Bitrix\Main\ORM\Fields;
 use Bitrix\Main\ORM\Fields\Relations\OneToMany;
-use \Mxm\Spgl\Traits\MethodsCreatingAndDeletingTablesInDBTrait;
 
 Loc::loadMessages(__FILE__);
 
 class CatalogLocationsTable extends DataManager
 {
-    use MethodsCreatingAndDeletingTablesInDBTrait;
-
     public static function getTableName()
     {
         return 'spgl_catalog_locations';
+        static::getEntity()->createDbTable();
     }
 
     public static function getMap()

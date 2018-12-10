@@ -15,8 +15,10 @@
     )
 );
 
+use Mxm\Spgl\UpdateData;
+
 CAgent::AddAgent(
-    "UpdateData::update()",
+    UpdateData::class . "::update()",
     "mxm_spgl",
     "Y",
     3600);

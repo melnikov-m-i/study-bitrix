@@ -11,14 +11,11 @@ use Bitrix\Main\ORM\Data\DataManager;
 use Bitrix\Main\ORM\Fields;
 use Bitrix\Main\ORM\Fields\Relations\Reference;
 use Bitrix\Main\ORM\Query\Join;
-use \Mxm\Spgl\Traits\MethodsCreatingAndDeletingTablesInDBTrait;
 
 Loc::loadMessages(__FILE__);
 
 class QuantityGoodsLocationTable extends DataManager
 {
-    use MethodsCreatingAndDeletingTablesInDBTrait;
-
     public static function getTableName()
     {
         return 'spgl_quantity_goods_location';

@@ -50,13 +50,6 @@ $aMenuLinks = Array(
         ""
     ),
     Array(
-        "import",
-        "data-import.php",
-        Array(),
-        Array(),
-        ""
-    ),
-    Array(
         "contact us",
         "contact.php",
         Array(),
@@ -66,6 +59,20 @@ $aMenuLinks = Array(
     Array(
         "vacancy",
         "vacancy/index.php",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "import",
+        "data-import.php",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "map spgl",
+        "spgl-map.php",
         Array(),
         Array(),
         ""

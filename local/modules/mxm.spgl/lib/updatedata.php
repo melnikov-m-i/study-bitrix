@@ -10,12 +10,17 @@ use Mxm\Spgl\Goods;
 use Mxm\Spgl\QuantityGoods;
 use Bitrix\Main\SystemException;
 use Mxm\Spgl\CatalogLocationsTable;
+use Bitrix\Main\Loader;
 
 class UpdateData
 {
     public static function update()
     {
-        $service = "http://test-symf.local/api/";
+        if (!Loader::includeModule("mxm.spgl")) {
+            return;
+        }
+
+        $service = "http://test-symfony.local/api/";
         $locations = new Locations($service . "catalog-locations");
         $goods = new Goods($service . "catalog-goods");
         
@@ -37,6 +42,6 @@ class UpdateData
             return null;
         }
 
-        return "UpdateData::update()";
+        return UpdateData::class . "::update()";
     }
 }

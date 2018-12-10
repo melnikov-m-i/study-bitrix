@@ -54,7 +54,7 @@ class mxm_spgl extends CModule
     {
         CopyDirFiles(
             __DIR__ . "/components/mxm",
-            Application::getDocumentRoot() . "/bitrix/components/mxm",
+            Application::getDocumentRoot() . "/local/components/mxm",
             true,
             true
         );

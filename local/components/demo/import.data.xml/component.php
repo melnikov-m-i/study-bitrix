@@ -9,7 +9,7 @@ $arFilter = Array();
 $arFilter['SITE_ID'] = SITE_ID;
 
 if ($arParams['IBLOCK_TYPE_ID'] !== IMPORT_INFOBLOCK_DEFAULT_TYPE_ALL) {
-    $arFilter['IBLOCK_TYPE_ID'] = $arParams['IBLOCK_TYPE_ID'];
+    $arFilter['TYPE'] = $arParams['IBLOCK_TYPE_ID'];
 }
 
 $dbIblock = CIBlock::GetList(Array(), $arFilter, true);

@@ -36,6 +36,10 @@ class SpglMap extends CBitrixComponent
 
     public function getData()
     {
+        if(!\Bitrix\Main\Loader::includeModule("mxm.spgl")) {
+            return;
+        }
+
         $data = QuantityGoodsLocationTable::getList(array(
             "select" => [
                 "OLD_QUANTITY",
