@@ -14,11 +14,3 @@
         "\\Mxm\\Spgl\\UpdateData" => "/local/modules/mxm.spgl/lib/updatedata.php",
     )
 );
-
-use Mxm\Spgl\UpdateData;
-
-CAgent::AddAgent(
-    UpdateData::class . "::update()",
-    "mxm_spgl",
-    "Y",
-    3600);

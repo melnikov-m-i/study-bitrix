@@ -3,6 +3,7 @@ use Bitrix\Main\Localization\Loc;
 use Bitrix\Main\ModuleManager;
 use Bitrix\Main\Application;
 use Bitrix\Main\IO\Directory;
+use Mxm\Spgl\UpdateData;
 
 Loc::loadMessages(__FILE__);
 
@@ -35,6 +36,13 @@ class mxm_spgl extends CModule
             $this->InstallFiles();
             $this->InstallDB();
             ModuleManager::registerModule($this->MODULE_ID);
+            \CAgent::AddAgent(
+                UpdateData::class . "::update();",
+                $this->MODULE_ID,
+                "Y",
+                3600,
+                "",
+                "Y");
             $this->InstallEvents();
         } else {
             $APPLICATION->ThrowException(
@@ -85,6 +93,7 @@ class mxm_spgl extends CModule
         $this->UnInstallFiles();
         $this->UnInstallDB();
         $this->UnInstallEvents();
+        \CAgent::RemoveModuleAgents($this->MODULE_ID);
         ModuleManager::unRegisterModule($this->MODULE_ID);
         $APPLICATION->IncludeAdminFile(
             Loc::getMessage("MXM_SPGL_UNINSTALL_TITLE") . " \"" . Loc::getMessage("MXM_SPGL_NAME") . "\"",

@@ -17,7 +17,7 @@ class UpdateData
     public static function update()
     {
         if (!Loader::includeModule("mxm.spgl")) {
-            return;
+            return UpdateData::class . "::update();";
         }
 
         $service = "http://test-symfony.local/api/";
@@ -42,6 +42,6 @@ class UpdateData
             return null;
         }
 
-        return UpdateData::class . "::update()";
+        return UpdateData::class . "::update();";
     }
 }
