@@ -23,5 +23,11 @@ $arComponentParameters = array(
             "VALUES" => $arIblockType,
             "REFRESH" => "Y"
         ),
+        "IBLOCK_ID" => array(
+            "PARENT" => "DATA_SOURCE",
+            "NAME" => GetMessage("IMPORT_INFOBLOCK_ID"),
+            "TYPE" => "STRING",
+            "DEFAULT" => '$_POST["iblockID"]'
+        )
     )
 );

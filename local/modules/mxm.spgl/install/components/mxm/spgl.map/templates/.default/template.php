@@ -5,7 +5,5 @@
 <div id="map" style="width: <?= $arParams["WIDTH_MAP"]; ?>px; height: <?= $arParams["HEIGHT_MAP"]; ?>px"></div>
 
 <script>
-    (function() {
-        window.spglData = <?= json_encode($arResult["DATA"]); ?>;
-    })();
+    window.spglData = <?= json_encode($arResult["DATA"]); ?>;
 </script>

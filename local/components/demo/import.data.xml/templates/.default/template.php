@@ -1,11 +1,14 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
-
 <div class="import-content">
     <div class="import-form">
-        <form method="post" name="importDataForm">
+        <form method="post" name="importDataForm" enctype="multipart/form-data">
             <select name="iblockID">
                 <? foreach ($arResult['IBLOCKS'] as $iBlock): ?>
-                    <option value="<?= $iBlock['ID']; ?>"><?= $iBlock['NAME']; ?></option>
+                    <option value="<?= $iBlock['ID']; ?>"
+                        <?= $iBlock == $arParams["IBLOCK_ID"] ? "selected" : ""?>
+                    >
+                        <?= $iBlock['NAME']; ?>
+                    </option>
                 <? endforeach; ?>
             </select>
             <div class="file-upload">
@@ -16,13 +19,5 @@
             <input type="submit" class="js-btn-submit" value="<?= GetMessage('IMPORT_DATA_SUBMIT'); ?>">
         </form>
     </div>
-    <div class="import-area-message"></div>
+    <div class="import-area-message"><?= $arResult["MESSAGE"]; ?></div>
 </div>
-
-<script>
-    (function(){
-        window.importDataXmlUrlUploader = '<?=$_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER["SERVER_NAME"] . $componentPath?>/upload.php'
-    })()
-</script>
-
-

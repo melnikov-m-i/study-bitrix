@@ -9,13 +9,16 @@ $APPLICATION->SetTitle("Импорт данных");
         <div class="bg-main">
             <div class="wrap">
                 <div class="main">
-                    <?$APPLICATION->IncludeComponent(
+                    <? $APPLICATION->IncludeComponent(
                         "demo:import.data.xml",
-                        "",
-                        Array(
-                            "IBLOCK_TYPE_ID" => "testiblock"
-                        )
-                    );?>
+                        ".default",
+                        array(
+                            "COMPONENT_TEMPLATE" => ".default",
+                            "IBLOCK_TYPE_ID" => "testiblock",
+                            "IBLOCK_ID" => $_POST["iblockID"]
+                        ),
+                        false
+                    ); ?>
                 </div>
             </div>
         </div>

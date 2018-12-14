@@ -54,9 +54,18 @@ class SpglMap extends CBitrixComponent
         $result = [];
 
         foreach ($data as $item) {
-            $result[$item["LOC_NAME"]]["LOC_LATITUDE"] = $item["LOC_LATITUDE"];
-            $result[$item["LOC_NAME"]]["LOC_LONGITUDE"] = $item["LOC_LONGITUDE"];
-            $result[$item["LOC_NAME"]]["GOODS"][] = [
+            $locName = $item["LOC_NAME"];
+
+            if(!is_array($result[$locName])) {
+                $result[$locName] = [];
+            }
+
+            $result[$locName] += [
+                'LOC_LATITUDE' => $item["LOC_LATITUDE"],
+                'LOC_LONGITUDE' => $item["LOC_LONGITUDE"],
+                'GOODS' => [],
+            ];
+            $result[$locName]['GOODS'][]  = [
                 "NAME" => $item["GOODS_NAME"],
                 "OLD_QUANTITY" => $item["OLD_QUANTITY"],
                 "NEW_QUANTITY" => $item["NEW_QUANTITY"],

@@ -6,7 +6,6 @@
 namespace Mxm\Spgl;
 
 use Bitrix\Main\Localization\Loc;
-use Bitrix\Main\Application;
 use Bitrix\Main\ORM\Data\DataManager;
 use Bitrix\Main\ORM\Fields;
 use Bitrix\Main\ORM\Fields\Relations\OneToMany;
@@ -31,15 +30,5 @@ class CatalogGoodsTable extends DataManager
             new Fields\StringField('NAME'),
             (new OneToMany('QUANTITY_GOODS_LOCATION', QuantityGoodsLocationTable::class, 'GOODS'))
         );
-    }
-    public static function createTable()
-    {
-        $connection = Application::getInstance()->getConnection();
-        if (!$connection->isTableExists(static::getTableName())) {
-            static::getEntity()->createDbTable();
-            return true;
-        } else {
-            return false;
-        }
     }
 }
