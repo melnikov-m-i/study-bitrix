@@ -27,7 +27,7 @@ $arComponentParameters = array(
             "PARENT" => "DATA_SOURCE",
             "NAME" => GetMessage("IMPORT_INFOBLOCK_ID"),
             "TYPE" => "STRING",
-            "DEFAULT" => '$_POST["iblockID"]'
+            "DEFAULT" => '={$_POST["iblockID"]}'
         )
     )
 );
